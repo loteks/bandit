@@ -1,3 +1,19 @@
+## 1.5.7 (1 Aug 2024)
+
+### Changes
+
+* Timeouts encountered while reading a request body will now result in a `408
+  Request Timeout` being returned to the client by way of a `Bandit.HTTPError`
+  being raised. Previously, a `:more` tuple was returned (#385, thanks
+  @martosaur!)
+
+## 1.5.6 (1 Aug 2024)
+
+### Fixes
+
+* Improve handling of the end of stream condition for HTTP/2 requests that send
+  a body which isn't read by the Plug (#387, thanks @fekle!)
+
 ## 1.5.5 (19 Jun 2024)
 
 ### Changes
